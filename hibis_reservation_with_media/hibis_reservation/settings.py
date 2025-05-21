@@ -5,6 +5,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-test-key'
 DEBUG = True
 ALLOWED_HOSTS = ['*']
+import os
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+if os.environ.get('RENDER'):
+    ALLOWED_HOSTS.append('hibis-reservation.onrender.com')
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
