@@ -80,3 +80,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 if os.environ.get('RENDER'):
     ALLOWED_HOSTS.append('hibis-reservation.onrender.com')
+
+/* 最終更新: 2025-05-21 */
