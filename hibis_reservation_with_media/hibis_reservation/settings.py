@@ -72,3 +72,11 @@ STATICFILES_DIRS = [BASE_DIR / 'booking' / 'static']
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
+
+import os
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+if os.environ.get('RENDER'):
+    ALLOWED_HOSTS.append('hibis-reservation.onrender.com')
