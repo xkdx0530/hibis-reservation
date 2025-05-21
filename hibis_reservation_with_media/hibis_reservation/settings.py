@@ -7,15 +7,14 @@ SECRET_KEY = 'django-insecure-test-key'
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
-# ▼ 静的ファイル設定（ローカルと本番両対応）
+# 静的ファイルの設定（Render対応済み）
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'booking' / 'static']  # ローカル開発用
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')   # Render本番用
+STATICFILES_DIRS = [BASE_DIR / 'booking' / 'static']
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 if os.environ.get('RENDER'):
     ALLOWED_HOSTS.append('hibis-reservation.onrender.com')
 
-# ▼ アプリ登録
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -26,7 +25,6 @@ INSTALLED_APPS = [
     'booking',
 ]
 
-# ▼ ミドルウェア
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -37,10 +35,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# ▼ URL設定
 ROOT_URLCONF = 'hibis_reservation.urls'
 
-# ▼ テンプレート設定
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -57,10 +53,8 @@ TEMPLATES = [
     },
 ]
 
-# ▼ WSGIアプリケーション
 WSGI_APPLICATION = 'hibis_reservation.wsgi.application'
 
-# ▼ データベース
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -68,13 +62,11 @@ DATABASES = {
     }
 }
 
-# ▼ 言語とタイムゾーン
 LANGUAGE_CODE = 'ja'
 TIME_ZONE = 'Asia/Tokyo'
 USE_I18N = True
 USE_TZ = True
 
-# ▼ 認証
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
