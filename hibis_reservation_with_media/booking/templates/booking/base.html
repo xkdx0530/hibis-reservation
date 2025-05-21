@@ -1,28 +1,31 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
-    {% load static %}
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIBIS...予約システム</title>
-    <link rel="stylesheet" href="{% static 'booking/style.css' %}">
-    <link rel="stylesheet" href="{% static 'booking/css/fullcalendar.min.css' %}">
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+  <meta charset="UTF-8">
+  <title>HIBIS...予約システム</title>
+  <link rel="stylesheet" href="{% static 'booking/style.css' %}">
 </head>
 <body>
-    <header>
-        <h1>HIBIS...予約システム</h1>
-        <div class="auth-status">
-            {% if user.is_authenticated %}
-                ようこそ、{{ user.username }}さん！ <a href="{% url 'logout' %}">ログアウト</a>
-            {% else %}
-                <a href="{% url 'login' %}">ログイン</a>
-            {% endif %}
-        </div>
-    </header>
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+  <header>
+    <h1>HIBIS...予約システム</h1>
+    {% if user.is_authenticated %}
+      <p>{{ user.username }}さん、ようこそ！ <a href="{% url 'logout' %}">ログアウト</a></p>
+    {% else %}
+      <a href="{% url 'login' %}">ログイン</a>
+    {% endif %}
+    <hr>
+  </header>
+
+  <main>
+    {% block content %}
+    <!-- 各ページ固有のコンテンツ -->
+    {% endblock %}
+  </main>
+
+  <footer>
+    <hr>
+    <p style="text-align: center; font-size: 12px;">&copy; HIBIS... All rights reserved.</p>
+  </footer>
 </body>
 </html>
