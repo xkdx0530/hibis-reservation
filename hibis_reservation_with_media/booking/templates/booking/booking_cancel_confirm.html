@@ -1,0 +1,11 @@
+
+{% extends 'booking/base.html' %}
+{% block content %}
+<h2>予約キャンセル確認</h2>
+<p>{{ booking.date }} {{ booking.time }} - {{ booking.menu.name }} の予約をキャンセルしますか？</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">キャンセルする</button>
+    <a href="{% url 'booking_list' %}">戻る</a>
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+
+{% extends 'booking/base.html' %}
+{% block content %}
+<h2>予約カレンダー</h2>
+<div id="calendar"></div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        locale: 'ja'
+    });
+    calendar.render();
+});
+</script>
+{% endblock %}

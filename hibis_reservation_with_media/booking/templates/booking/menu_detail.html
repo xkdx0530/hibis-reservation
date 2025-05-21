@@ -1,0 +1,12 @@
+
+{% extends 'booking/base.html' %}
+{% block content %}
+<h2>{{ menu.name }}</h2>
+{% if menu.image %}
+    <img src="{{ menu.image.url }}" alt="{{ menu.name }}" style="max-width:100%;">
+{% endif %}
+<p>{{ menu.description }}</p>
+<p>所要時間: {{ menu.duration }}分</p>
+<p>料金: ¥{{ menu.price }}</p>
+<a href="{% url 'booking_create' %}">このメニューで予約する</a>
+{% endblock %}
