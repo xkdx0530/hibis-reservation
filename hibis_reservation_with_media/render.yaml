@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: hibis-reservation
+    env: python
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+    startCommand: gunicorn hibis_reservation.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: hibis_reservation.settings
+    autoDeploy: false
