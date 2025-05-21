@@ -1,0 +1,54 @@
+body {
+  font-family: 'Georgia', serif;
+  background: #fdf8f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+  color: #b2965a;
+}
+
+header, footer {
+  background-color: #fffaf4;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-bottom: 1px solid #eee;
+}
+
+main {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+a {
+  color: #c2a05f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button, input[type=submit] {
+  background-color: #bca270;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+button:hover {
+  background-color: #a58c55;
+}
+
+/* 最終更新: 2025-05-21 */
