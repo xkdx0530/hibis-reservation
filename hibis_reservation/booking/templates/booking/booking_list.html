@@ -1,0 +1,15 @@
+{% extends 'booking/base.html' %}
+{% block content %}
+<h2>予約一覧</h2>
+<table>
+  <tr><th>名前</th><th>メニュー</th><th>開始</th><th></th></tr>
+  {% for booking in bookings %}
+  <tr>
+    <td>{{ booking.name }}</td>
+    <td>{{ booking.menu.name }}</td>
+    <td>{{ booking.start_at|date:"Y-m-d H:i" }}</td>
+    <td><a href="{% url 'booking_cancel' booking.pk %}">キャンセル</a></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

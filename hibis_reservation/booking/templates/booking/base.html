@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>HIBIS予約システム</title>
+  <link rel="stylesheet" href="{% static 'booking/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>HIBIS予約システム</h1>
+    <p><a href="/admin/">管理者ログイン</a></p>
+    <hr>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <hr>
+    <p style="text-align: center; font-size: 12px;">&copy; HIBIS All rights reserved.</p>
+  </footer>
+</body>
+</html>
