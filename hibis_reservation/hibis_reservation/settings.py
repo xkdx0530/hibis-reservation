@@ -7,7 +7,6 @@ SECRET_KEY = 'django-insecure-test-key'
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
-# 静的ファイルの設定（Render対応済み）
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'booking' / 'static']
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -22,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'menus',
     'booking',
 ]
 
@@ -66,7 +66,3 @@ LANGUAGE_CODE = 'ja'
 TIME_ZONE = 'Asia/Tokyo'
 USE_I18N = True
 USE_TZ = True
-
-LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/login/'
